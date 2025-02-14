@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <!-- Modal de Login/Registro -->
+<div class="modal" id="authModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Login / Registrar</h2>
+        <form id="authForm">
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn-primary">Entrar</button>
+            <button type="button" class="btn-secondary" onclick="toggleRegister()">Criar Conta</button>
+        </form>
+    </div>
+</div>
+
+
+    <div class="custom-scrollbar">
+        <div class="scroll-thumb"></div>
+    </div>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Dev Shop</div>
+        <div class="menu">
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="video-background">
+            <video autoplay loop muted>
+                <source src="videoplayback.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+
+
+        <!-- Ícone do Menu -->
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+
+
+        <!-- Barra Lateral -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h3>Configurações</h3>
+                <a href="#" class="sidebar-link">Login</a>
+                <a href="#" class="sidebar-link">Registrar</a>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <h1>Bem-vindo ao Dev Shop</h1>
+            <p>Produtos para qualidade de vida</p>
+            <a href="#produtos" class="btn-primary">Ver Produtos</a>
+        </div>
+    </section>
+
+
+    <!-- Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos em Destaque</h2>
+        <div class="produto-grid">
+            <div class="produto">
+                <img src="https://imgs.search.brave.com/y_XfKJpBV7sCCzRM_JkNldyXSVPES0QW-UHep8jTTKo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODE0cTFVeGFjMUwu/anBn" alt="Produto 1">
+                <p>Mouse Pad Java</p>
+                <p>R$ 99,90</p>
+                <div class="produto-botoes">
+                    <button class="btn-carrinho">Adicionar ao Carrinho</button>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="https://imgs.search.brave.com/5XP0wSgpknqBWOK0OxrRVJTJhms1ov8ssgB85pXX7m0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzE4M2UyeGs4aUwu/anBn" alt="Produto 2">
+                <p>Notebook Asus Gamer</p>
+                <p>R$ 1.049,99</p>
+                <div class="produto-botoes">
+                    <button class="btn-carrinho">Adicionar ao Carrinho</button>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Nosso objetivo é melhorar a qualidade de aprendizado dos desenvolvedores com produtos de qualidade e conforto.</p>
+    </section>
+
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações sobre nossos produtos.</p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Dev Shop. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+
+/* Modal de Login/Registro */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+
+.close-modal:hover {
+    color: #e87c00;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+.btn-primary {
+    background-color: #e87c00;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+
+.btn-primary:hover {
+    background-color: #ff9900;
+}
+
+
+.btn-secondary {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+
+/* Estilos para os botões de produto */
+.produto-botoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+.btn-carrinho, .btn-comprar {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    flex: 1;/* Faz os botões ocuparem o mesmo espaço */
+
+
+}
+
+
+.btn-carrinho {
+    background-color: #e87c00;
+    color: white;
+}
+
+
+.btn-carrinho:hover {
+    background-color: #ff9900;
+}
+
+
+.btn-comprar {
+    background-color: #333;
+    color: white;
+}
+
+
+.btn-comprar:hover {
+    background-color: #555;
+}
+
+
+/* Barra de Scroll Personalizada */
+.custom-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Inicialmente escondida */
+}
+
+
+.scroll-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #e87c00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.scroll-thumb:hover {
+    background-color: #ff9900;
+}
+
+
+/* Mostrar a barra de scroll ao rolar */
+body.scrolling .custom-scrollbar {
+    display: block;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+
+.navbar .logo {
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    transition: transform 0.3s ease; /* Adiciona transição */
+
+
+}
+
+
+/* Logo se movendo quando a barra lateral está aberta */
+.navbar .logo.shifted {
+    transform: translateX(250px); /* Mover o logo para a direita */
+}
+
+
+.navbar .menu a {
+    text-decoration: none;
+    margin-left: 3rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+
+.navbar .menu a:hover {
+    color: #e87c00;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra toda a área sem distorção */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.content a{
+
+
+    text-decoration: none;
+
+
+}
+
+
+.hero .content {
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.hero .btn-primary {
+    background-color: #e87c00;
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.hero .btn-primary:hover {
+    background-color: #ff9900;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Produtos */
+.produtos {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+
+.produtos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.produto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+
+.produto {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Sobre */
+.sobre {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+
+.sobre h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Contato */
+.contato {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+
+/* Transição suave de rolagem */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #e87c00;
+    z-index: 9999;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+    transition: transform 0.1s ease-in-out;
+}
+
+
+/* Ícone do Menu */
+.menu-icon {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+
+.menu-icon:hover {
+    color: #e87c00;
+}
+
+
+/* Barra Lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Esconde a barra lateral */
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+
+.sidebar-content {
+    padding: 2rem;
+}
+
+
+.sidebar h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+    text-align: center;
+    margin-top: -0.5rem;
+
+
+}
+
+
+.sidebar-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.sidebar-link:hover {
+    background-color: #e87c00;
+}
+
+
+/* Classe para abrir a barra lateral */
+.sidebar.open {
+    left: 0;
+}
+
+
+</style>
+
+
+<script>
+
+
+// Função para abrir o modal
+function openModal() {
+    const modal = document.getElementById('authModal');
+    modal.style.display = 'flex';
+}
+
+
+// Função para fechar o modal
+function closeModal() {
+    const modal = document.getElementById('authModal');
+    modal.style.display = 'none';
+}
+
+
+// Função para alternar entre login e registro
+function toggleRegister() {
+    const form = document.getElementById('authForm');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const toggleButton = form.querySelector('button[type="button"]');
+
+
+    if (submitButton.textContent === 'Entrar') {
+        submitButton.textContent = 'Registrar';
+        toggleButton.textContent = 'Já tem uma conta? Entrar';
+    } else {
+        submitButton.textContent = 'Entrar';
+        toggleButton.textContent = 'Criar Conta';
+    }
+}
+
+
+// Adiciona eventos de clique aos links de Login e Registrar
+document.querySelectorAll('.sidebar-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita o comportamento padrão do link
+        openModal();
+    });
+});
+
+
+// Fecha o modal ao clicar fora dele
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('authModal');
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+
+// Seleciona os elementos da barra de scroll
+const customScrollbar = document.querySelector('.custom-scrollbar');
+const scrollThumb = document.querySelector('.scroll-thumb');
+const body = document.body;
+
+
+// Função para atualizar a posição do thumb da barra de scroll
+function updateScrollThumb() {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const scrollPercent = (scrollPosition / scrollHeight) * 100;
+
+
+    // Ajusta a posição do thumb
+    const thumbPosition = (scrollPercent / 100) * (window.innerHeight - scrollThumb.offsetHeight);
+    scrollThumb.style.top = `${thumbPosition}px`;
+}
+
+
+// Função para rolar a página ao arrastar o thumb
+let isDragging = false;
+
+
+scrollThumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        document.removeEventListener('mousemove', onMouseMove);
+    });
+});
+
+
+function onMouseMove(e) {
+    if (isDragging) {
+        const scrollbarRect = customScrollbar.getBoundingClientRect();
+        const thumbPosition = e.clientY - scrollbarRect.top - (scrollThumb.offsetHeight / 2);
+        const scrollPercent = thumbPosition / (scrollbarRect.height - scrollThumb.offsetHeight);
+        const scrollPosition = scrollPercent * (document.documentElement.scrollHeight - window.innerHeight);
+
+
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: 'instant'
+        });
+    }
+}
+
+
+// Atualiza a barra de scroll ao rolar a página
+window.addEventListener('scroll', () => {
+    updateScrollThumb();
+    body.classList.add('scrolling'); // Mostra a barra de scroll ao rolar
+});
+
+
+// Esconde a barra de scroll após parar de rolar
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        body.classList.remove('scrolling');
+    }, 1000); // Esconde após 1 segundo de inatividade
+});
+
+
+// Inicializa a posição do thumb
+updateScrollThumb();
+
+
+// Função para abrir/fechar a barra lateral
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const logo = document.querySelector('.navbar .logo'); // Seletor do logo
+
+
+    sidebar.classList.toggle('open');
+    logo.classList.toggle('shifted'); // Adiciona ou remove a classe 'shifted'
+}
+
+
+// Barra de progresso de rolagem
+const progressBar = document.createElement('div');
+progressBar.classList.add('scroll-progress');
+document.body.appendChild(progressBar);
+
+
+window.addEventListener('scroll', () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const scrollPercent = (scrollPosition / scrollHeight) * 100;
+    progressBar.style.transform = `scaleX(${scrollPercent / 100})`;
+   
+    // Alterar a cor da navbar ao rolar
+    if (scrollPosition > 50) {
+        document.querySelector('.navbar').classList.add('scroll');
+    } else {
+        document.querySelector('.navbar').classList.remove('scroll');
+    }
+});
+
+
+// Animações de fade in para as seções ao rolar
+const sections = document.querySelectorAll('.produtos, .sobre, .contato');
+
+
+const animateOnScroll = () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight - 100) {
+            section.classList.add('visible');
+        }
+    });
+};
+
+
+window.addEventListener('scroll', animateOnScroll);
+animateOnScroll();  // Chama inicialmente para animações que já estão visíveis
+
+
+// Adicionar funcionalidade ao botão "Adicionar ao Carrinho"
+document.querySelectorAll('.btn-carrinho').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Produto adicionado ao carrinho!');
+        // Aqui você pode adicionar a lógica para adicionar o produto ao carrinho
+    });
+});
+
+
+// Adicionar funcionalidade ao botão "Comprar"
+document.querySelectorAll('.btn-comprar').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Redirecionando para a página de checkout...');
+        // Aqui você pode redirecionar para a página de checkout
+    });
+});
+
+
+</script>
+
