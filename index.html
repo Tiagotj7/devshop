@@ -10,6 +10,8 @@
 <body>
 
 
+
+
     <!-- Modal de Login/Registro -->
 <div class="modal" id="authModal">
     <div class="modal-content">
@@ -31,16 +33,14 @@
 </div>
 
 
+
+
     <div class="custom-scrollbar">
         <div class="scroll-thumb"></div>
     </div>
 
-<!-- Logotipo Dev Shop -->
 
-<div class="logo">
-    <img src="https://imgs.search.brave.com/5XP0wSgpknqBWOK0OxrRVJTJhms1ov8ssgB85pXX7m0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzE4M2UyeGs4aUwu/anBn" alt="Logo Dev Shop" class="logo-img">
-    Dev Shop
-</div>
+
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -58,6 +58,8 @@
     </nav>
 
 
+
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="video-background">
@@ -68,8 +70,12 @@
         </div>
 
 
+
+
         <!-- Ícone do Menu -->
         <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+
+
 
 
         <!-- Barra Lateral -->
@@ -82,12 +88,16 @@
         </div>
 
 
+
+
         <div class="content">
             <h1>Bem-vindo ao Dev Shop</h1>
             <p>Produtos para qualidade de vida</p>
             <a href="#produtos" class="btn-primary">Ver Produtos</a>
         </div>
     </section>
+
+
 
 
     <!-- Produtos -->
@@ -121,11 +131,15 @@
     </section>
 
 
+
+
     <!-- Contato -->
     <section id="contato" class="contato">
         <h2>Contato</h2>
         <p>Entre em contato conosco para mais informações sobre nossos produtos.</p>
     </section>
+
+
 
 
     <!-- Footer -->
@@ -134,12 +148,18 @@
     </footer>
 
 
+
+
     <script src="script.js"></script>
 </body>
 </html>
 
 
+
+
 <style>
+
+
 
 
 /* Reset básico */
@@ -150,6 +170,8 @@
 }
 
 
+
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -157,21 +179,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Logotipo Dev Shop */
 
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    margin-left: 2rem;
-    transition: transform 0.3s ease;
-}
 
-.logo-img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
+
 
 
 /* Modal de Login/Registro */
@@ -189,6 +199,8 @@ body {
 }
 
 
+
+
 .modal-content {
     background-color: white;
     padding: 2rem;
@@ -198,6 +210,8 @@ body {
     position: relative;
     animation: fadeIn 0.3s ease;
 }
+
+
 
 
 @keyframes fadeIn {
@@ -212,6 +226,8 @@ body {
 }
 
 
+
+
 .close-modal {
     position: absolute;
     top: 1rem;
@@ -222,14 +238,20 @@ body {
 }
 
 
+
+
 .close-modal:hover {
     color: #e87c00;
 }
 
 
+
+
 .form-group {
     margin-bottom: 1rem;
 }
+
+
 
 
 .form-group label {
@@ -239,6 +261,8 @@ body {
 }
 
 
+
+
 .form-group input {
     width: 100%;
     padding: 0.5rem;
@@ -246,6 +270,8 @@ body {
     border-radius: 5px;
     font-size: 1rem;
 }
+
+
 
 
 .btn-primary {
@@ -261,9 +287,13 @@ body {
 }
 
 
+
+
 .btn-primary:hover {
     background-color: #ff9900;
 }
+
+
 
 
 .btn-secondary {
@@ -279,9 +309,13 @@ body {
 }
 
 
+
+
 .btn-secondary:hover {
     background-color: #555;
 }
+
+
 
 
 /* Estilos para os botões de produto */
@@ -291,6 +325,8 @@ body {
     gap: 1rem;
     margin-top: 1rem;
 }
+
+
 
 
 .btn-carrinho, .btn-comprar {
@@ -303,7 +339,11 @@ body {
     flex: 1;/* Faz os botões ocuparem o mesmo espaço */
 
 
+
+
 }
+
+
 
 
 .btn-carrinho {
@@ -312,9 +352,13 @@ body {
 }
 
 
+
+
 .btn-carrinho:hover {
     background-color: #ff9900;
 }
+
+
 
 
 .btn-comprar {
@@ -323,9 +367,13 @@ body {
 }
 
 
+
+
 .btn-comprar:hover {
     background-color: #555;
 }
+
+
 
 
 /* Barra de Scroll Personalizada */
@@ -341,6 +389,8 @@ body {
 }
 
 
+
+
 .scroll-thumb {
     position: absolute;
     top: 0;
@@ -354,15 +404,20 @@ body {
 }
 
 
+
+
 .scroll-thumb:hover {
     background-color: #ff9900;
 }
+
+
 
 
 /* Mostrar a barra de scroll ao rolar */
 body.scrolling .custom-scrollbar {
     display: block;
 }
+
 
 /* Estilos para o ícone do carrinho */
 .cart-icon {
@@ -374,6 +429,7 @@ body.scrolling .custom-scrollbar {
     display: inline-block;
 }
 
+
 .cart-count {
     position: absolute;
     top: -10px;
@@ -384,6 +440,7 @@ body.scrolling .custom-scrollbar {
     padding: 2px 6px;
     font-size: 0.8rem;
 }
+
 
 /* Estilos para o link "Contato" */
 .contato-link {
@@ -398,9 +455,11 @@ body.scrolling .custom-scrollbar {
     transition: color 0.3s ease;
 }
 
+
 .contato-link:hover {
     color: #e87c00;
 }
+
 
 /* Navbar */
 .navbar {
@@ -418,19 +477,27 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .navbar .logo {
     font-size: 1.8rem;
     margin-left: 2rem;
     transition: transform 0.3s ease; /* Adiciona transição */
 
 
+
+
 }
+
+
 
 
 /* Logo se movendo quando a barra lateral está aberta */
 .navbar .logo.shifted {
     transform: translateX(250px); /* Mover o logo para a direita */
 }
+
+
 
 
 .navbar .menu a {
@@ -444,9 +511,13 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .navbar .menu a:hover {
     color: #e87c00;
 }
+
+
 
 
 /* Hero Section */
@@ -462,6 +533,8 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .video-background video {
     width: 100%;
     height: 100%;
@@ -472,13 +545,21 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .content a{
+
+
 
 
     text-decoration: none;
 
 
+
+
 }
+
+
 
 
 .hero .content {
@@ -489,16 +570,22 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
 }
 
 
+
+
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
+
+
 
 
 .hero .btn-primary {
@@ -514,9 +601,13 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .hero .btn-primary:hover {
     background-color: #ff9900;
 }
+
+
 
 
 @keyframes fadeInUp {
@@ -531,6 +622,8 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 /* Produtos */
 .produtos {
     padding: 4rem 2rem;
@@ -539,10 +632,14 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .produtos h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
+
+
 
 
 .produto-grid {
@@ -550,6 +647,8 @@ body.scrolling .custom-scrollbar {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
+
+
 
 
 .produto {
@@ -563,6 +662,8 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .produto img {
     width: 100%;
     height: auto;
@@ -570,10 +671,14 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .produto:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
+
 
 
 @keyframes fadeInUp {
@@ -588,6 +693,8 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 /* Sobre */
 .sobre {
     padding: 3rem 2rem;
@@ -596,10 +703,14 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .sobre h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
+
 
 
 /* Contato */
@@ -607,6 +718,8 @@ body.scrolling .custom-scrollbar {
     padding: 3rem 2rem;
     text-align: center;
 }
+
+
 
 
 /* Footer */
@@ -617,6 +730,8 @@ body.scrolling .custom-scrollbar {
     padding: 2rem;
     margin-top: 3rem;
 }
+
+
 
 
 /* Transição suave de rolagem */
@@ -634,6 +749,8 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 /* Ícone do Menu */
 .menu-icon {
     position: fixed;
@@ -647,9 +764,13 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .menu-icon:hover {
     color: #e87c00;
 }
+
+
 
 
 /* Barra Lateral */
@@ -666,9 +787,13 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .sidebar-content {
     padding: 2rem;
 }
+
+
 
 
 .sidebar h3 {
@@ -678,7 +803,11 @@ body.scrolling .custom-scrollbar {
     margin-top: -0.5rem;
 
 
+
+
 }
+
+
 
 
 .sidebar-link {
@@ -693,9 +822,13 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 .sidebar-link:hover {
     background-color: #e87c00;
 }
+
+
 
 
 /* Classe para abrir a barra lateral */
@@ -704,10 +837,16 @@ body.scrolling .custom-scrollbar {
 }
 
 
+
+
 </style>
 
 
+
+
 <script>
+
+
 
 
 // Função para abrir o modal
@@ -717,6 +856,8 @@ function openModal() {
 }
 
 
+
+
 // Função para fechar o modal
 function closeModal() {
     const modal = document.getElementById('authModal');
@@ -724,11 +865,15 @@ function closeModal() {
 }
 
 
+
+
 // Função para alternar entre login e registro
 function toggleRegister() {
     const form = document.getElementById('authForm');
     const submitButton = form.querySelector('button[type="submit"]');
     const toggleButton = form.querySelector('button[type="button"]');
+
+
 
 
     if (submitButton.textContent === 'Entrar') {
@@ -741,6 +886,8 @@ function toggleRegister() {
 }
 
 
+
+
 // Adiciona eventos de clique aos links de Login e Registrar
 document.querySelectorAll('.sidebar-link').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -748,6 +895,8 @@ document.querySelectorAll('.sidebar-link').forEach(link => {
         openModal();
     });
 });
+
+
 
 
 // Fecha o modal ao clicar fora dele
@@ -759,10 +908,14 @@ window.addEventListener('click', (e) => {
 });
 
 
+
+
 // Seleciona os elementos da barra de scroll
 const customScrollbar = document.querySelector('.custom-scrollbar');
 const scrollThumb = document.querySelector('.scroll-thumb');
 const body = document.body;
+
+
 
 
 // Função para atualizar a posição do thumb da barra de scroll
@@ -772,14 +925,20 @@ function updateScrollThumb() {
     const scrollPercent = (scrollPosition / scrollHeight) * 100;
 
 
+
+
     // Ajusta a posição do thumb
     const thumbPosition = (scrollPercent / 100) * (window.innerHeight - scrollThumb.offsetHeight);
     scrollThumb.style.top = `${thumbPosition}px`;
 }
 
 
+
+
 // Função para rolar a página ao arrastar o thumb
 let isDragging = false;
+
+
 
 
 scrollThumb.addEventListener('mousedown', (e) => {
@@ -792,12 +951,16 @@ scrollThumb.addEventListener('mousedown', (e) => {
 });
 
 
+
+
 function onMouseMove(e) {
     if (isDragging) {
         const scrollbarRect = customScrollbar.getBoundingClientRect();
         const thumbPosition = e.clientY - scrollbarRect.top - (scrollThumb.offsetHeight / 2);
         const scrollPercent = thumbPosition / (scrollbarRect.height - scrollThumb.offsetHeight);
         const scrollPosition = scrollPercent * (document.documentElement.scrollHeight - window.innerHeight);
+
+
 
 
         window.scrollTo({
@@ -808,11 +971,15 @@ function onMouseMove(e) {
 }
 
 
+
+
 // Atualiza a barra de scroll ao rolar a página
 window.addEventListener('scroll', () => {
     updateScrollThumb();
     body.classList.add('scrolling'); // Mostra a barra de scroll ao rolar
 });
+
+
 
 
 // Esconde a barra de scroll após parar de rolar
@@ -825,8 +992,12 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+
 // Inicializa a posição do thumb
 updateScrollThumb();
+
+
 
 
 // Função para abrir/fechar a barra lateral
@@ -835,15 +1006,21 @@ function toggleSidebar() {
     const logo = document.querySelector('.navbar .logo'); // Seletor do logo
 
 
+
+
     sidebar.classList.toggle('open');
     logo.classList.toggle('shifted'); // Adiciona ou remove a classe 'shifted'
 }
+
+
 
 
 // Barra de progresso de rolagem
 const progressBar = document.createElement('div');
 progressBar.classList.add('scroll-progress');
 document.body.appendChild(progressBar);
+
+
 
 
 window.addEventListener('scroll', () => {
@@ -861,8 +1038,12 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+
 // Animações de fade in para as seções ao rolar
 const sections = document.querySelectorAll('.produtos, .sobre, .contato');
+
+
 
 
 const animateOnScroll = () => {
@@ -876,8 +1057,12 @@ const animateOnScroll = () => {
 };
 
 
+
+
 window.addEventListener('scroll', animateOnScroll);
 animateOnScroll();  // Chama inicialmente para animações que já estão visíveis
+
+
 
 
 // Adicionar funcionalidade ao botão "Adicionar ao Carrinho"
@@ -889,6 +1074,8 @@ document.querySelectorAll('.btn-carrinho').forEach(button => {
 });
 
 
+
+
 // Adicionar funcionalidade ao botão "Comprar"
 document.querySelectorAll('.btn-comprar').forEach(button => {
     button.addEventListener('click', () => {
@@ -897,14 +1084,17 @@ document.querySelectorAll('.btn-comprar').forEach(button => {
     });
 });
 
+
 // Variável para armazenar a quantidade de itens no carrinho
 let cartCount = 0;
+
 
 // Função para atualizar o ícone do carrinho
 function updateCartIcon() {
     const cartCountElement = document.querySelector('.cart-count');
     cartCountElement.textContent = cartCount;
 }
+
 
 // Adicionar funcionalidade ao botão "Adicionar ao Carrinho"
 document.querySelectorAll('.btn-carrinho').forEach(button => {
@@ -915,11 +1105,12 @@ document.querySelectorAll('.btn-carrinho').forEach(button => {
     });
 });
 
+
 // Função para abrir o carrinho (pode ser implementada posteriormente)
 function openCart() {
     alert('Abrindo carrinho...');
     // Aqui você pode adicionar a lógica para abrir o carrinho
 }
 
-</script>
 
+</script>
