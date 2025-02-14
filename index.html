@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Shop</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -42,6 +43,11 @@
             <a href="#produtos">Produtos</a>
             <a href="#sobre">Sobre</a>
             <a href="#contato">Contato</a>
+                    <!-- Ícone do Carrinho com Notificação -->
+        <div class="cart-icon" onclick="openCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
         </div>
     </nav>
 
@@ -336,6 +342,25 @@ body.scrolling .custom-scrollbar {
     display: block;
 }
 
+/* Estilos para o ícone do carrinho */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 2rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e87c00;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+}
 
 /* Navbar */
 .navbar {
@@ -832,6 +857,29 @@ document.querySelectorAll('.btn-comprar').forEach(button => {
     });
 });
 
+// Variável para armazenar a quantidade de itens no carrinho
+let cartCount = 0;
+
+// Função para atualizar o ícone do carrinho
+function updateCartIcon() {
+    const cartCountElement = document.querySelector('.cart-count');
+    cartCountElement.textContent = cartCount;
+}
+
+// Adicionar funcionalidade ao botão "Adicionar ao Carrinho"
+document.querySelectorAll('.btn-carrinho').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++; // Incrementa o contador do carrinho
+        updateCartIcon(); // Atualiza o ícone do carrinho
+        alert('Produto adicionado ao carrinho!');
+    });
+});
+
+// Função para abrir o carrinho (pode ser implementada posteriormente)
+function openCart() {
+    alert('Abrindo carrinho...');
+    // Aqui você pode adicionar a lógica para abrir o carrinho
+}
 
 </script>
 
